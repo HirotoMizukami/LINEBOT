@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <script>
+window.onload = async function()
+{
+  navigator.geolocation.getCurrentPosition(getData);
+}
+
+function getData( position )
+{
+  var jsonPosition = {
+    "latitude" : position.coords.latitude,　// 緯度
+    "longitude" : position.coords.longitude // 経度
+  }
+
+  google.script.run.withSuccessHandler(winClose).setPosition(jsonPosition);
+  return;
+}
+
+function winClose(){
+  window.open('about:blank','_self').close();
+} 
+
+</script>
+  <body>
+  </body>
+  <form id="form">
+  </form>
+</html>
+
+
