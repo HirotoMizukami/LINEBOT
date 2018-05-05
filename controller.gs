@@ -12,3 +12,10 @@ function doPost(e) {
   return sendLineMessageFromReplyToken(replyToken, message);
 }
 
+function getImageToLine(){
+  var keyword, imageUrl;
+  // keywordは適当に設定。
+  imageUrl = getGoogleCustomSearchImage(keyword);
+
+  return sendLineImage(imageUrl);
+}
