@@ -14,8 +14,19 @@ function doPost(e) {
 
 function getImageToLine(){
   var keyword, imageUrl;
-  // keywordは適当に設定。
-  imageUrl = getGoogleCustomSearchImage(keyword);
-
-  return sendLineImage(imageUrl);
+  console.log(Function.name + start_log);
+  
+  try {
+    keyword = searchKeywords[Math.floor(Math.random() * (searchKeywords.length + 1))];
+    
+    console.log(keyword);
+    // keywordは適当に設定。
+    imageUrl = getGoogleCustomSearchImage(keyword);
+    imageUrl = urlShortener(imageUrl);
+    
+    sendLineImage(imageUrl);
+  } finally {
+    console.log(Function.name + end_log);
+  }  
+  return;
 }

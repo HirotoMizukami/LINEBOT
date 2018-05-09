@@ -3,7 +3,6 @@ function execTrigger(){
   setTrigger();
 }
 
-
 /**
   備考：ScriptAppは過去日にTriggerを設定できない。なので、過去日に値をsetしようとすると現在日に補正される。
 */
